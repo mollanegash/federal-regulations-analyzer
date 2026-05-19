@@ -58,19 +58,38 @@ RD = -----------------------------
 
 ## 🏗️ System Architecture
 
-```
-User
-  ↓
-Thymeleaf Dashboard (UI)
-  ↓
-Spring Boot API Layer
-  ↓
-NLP Analysis Engine
-  ↓
-H2 Database (Dev / Ephemeral)
-  ↓
-eCFR Data Processing Layer
-```
+                    ┌────────────────────┐
+                    │       User         │
+                    └─────────┬──────────┘
+                              │ HTTP
+                              ▼
+             ┌─────────────────────────────┐
+             │ Thymeleaf Dashboard (UI)    │
+             └───────────┬─────────────────┘
+                         │
+                         ▼
+             ┌─────────────────────────────┐
+             │ Spring Boot Controller Layer│
+             └───────────┬─────────────────┘
+                         │
+                         ▼
+             ┌─────────────────────────────┐
+             │ Service Layer               │
+             │ (Business Logic + RD Engine)│
+             └───────────┬─────────────────┘
+                         │
+          ┌──────────────┼──────────────┐
+          ▼              ▼              ▼
+┌────────────────┐ ┌────────────────┐ ┌────────────────────┐
+│ NLP Engine     │ │ Repository     │ │ eCFR Data Layer    │
+│ (RD Analysis)  │ │ (Data Access)  │ │ (Ingestion/Fetch)  │
+└────────────────┘ └──────┬─────────┘ └────────────────────┘
+                          │
+                          ▼
+                 ┌──────────────────┐
+                 │ H2 Database      │
+                 │ (In-Memory)      │
+                 └──────────────────┘
 
 ---
 
