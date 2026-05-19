@@ -39,12 +39,11 @@ This system:
 
 ## 📊 Requirement Density (RD)
 
+ ```text
         Prescriptive Keywords
 RD = -----------------------------
-         Total Word Count
-
-Prescriptive keywords include:
-shall, must, prohibited, penalty, compliance
+             Total Word Count
+```
 
 ### 📌 Interpretation
 
