@@ -119,14 +119,14 @@ Terraform is used to provision and manage cloud resources:
 
 This enables reproducible infrastructure and version-controlled deployments.
 
-📦 System Boundary
+## 📦 System Boundary
 
 External:
-- eCFR dataset (source of regulatory data)
+- eCFR dataset
 
 Internal:
 - NLP engine
-- RD computation system
+- RD computation
 - Dashboard + API
 
 The system processes external regulatory data into structured analytical insights.
