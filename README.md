@@ -1,6 +1,4 @@
 
-
-
 # High-Throughput Text Processing Engine
 
 *A cloud-native, production-hardened backend service for massive-scale text ingestion and real-time analytical processing.*
@@ -47,7 +45,7 @@ Client → API Gateway → Spring Boot (Stateless) → PostgreSQL
 * ⚡ **High-Concurrency Processing:** Parallel-stream ingestion for optimized throughput.
 * 📦 **Minimalist Footprint:** Multi-stage Docker builds (380MB → 89MB).
 * 🔒 **Data Integrity:** SHA-256 validation for input ingestion.
-* 🚦 **Production-Ready:** Instrumented with JVM memory tuning.
+* 🚦 **Production-Ready:** Instrumented with JVM memory tuning, health checks, and graceful shutdown.
 
 ---
 
@@ -55,7 +53,7 @@ Client → API Gateway → Spring Boot (Stateless) → PostgreSQL
 
 | Decision | Tradeoff |
 | --- | --- |
-| **Stateless API** | Horizontal scalability vs. local session complexity |
+| **Stateless API** | Horizontal scalability vs. session affinity |
 | **Parallel Streams** | Throughput performance vs. thread context switching overhead |
 | **Multi-stage Docker** | Reduced attack surface/image size vs. build complexity |
 
@@ -66,7 +64,7 @@ Client → API Gateway → Spring Boot (Stateless) → PostgreSQL
 ### Local Run
 
 ```bash
-mvn spring-boot:run
+docker-compose up # starts app + postgres + redis
 
 ```
 
@@ -82,12 +80,9 @@ docker run -p 8080:8080 text-processor
 
 *This engine serves as a blueprint for high-performance, cloud-native backend architecture.*
 
-**Live Demo:** [Federal Regulations Analyzer](https://federal-regulations-analyzer-fahp.onrender.com)
+**Demo:** Available on request. Screenshots available in `/docs`.
 
 ```
 
----
-
-that will draw in those Staff-level recruiters.
 
 ```
